@@ -43,10 +43,10 @@ class TaskManager:
             self.tasks.append(new_task)
             self.save_data()
             logging.info(f"Task added: {title}")
-            print("✔ Task added successfully.")
+            print(" Task added successfully.")
         except Exception as e:
             logging.error(f"Error adding task: {e}")
-            print("✖ Error adding task.")
+            print(" Error adding task.")
 
     def view_tasks(self):
         if not self.tasks:
@@ -63,9 +63,9 @@ class TaskManager:
                 self.tasks[task_id - 1].status = "Completed"
                 self.save_data()
                 logging.info(f"Task {task_id} marked complete")
-                print("✔ Task updated.")
+                print(" Task updated.")
             else:
-                print("✖ Invalid Task ID.")
+                print(" Invalid Task ID.")
         except Exception as e:
             logging.error(f"Error completing task: {e}")
 
@@ -75,9 +75,9 @@ class TaskManager:
                 removed = self.tasks.pop(task_id - 1)
                 self.save_data()
                 logging.info(f"Task deleted: {removed.title}")
-                print("✔ Task deleted.")
+                print(" Task deleted.")
             else:
-                print("✖ Invalid Task ID.")
+                print(" Invalid Task ID.")
         except Exception as e:
             logging.error(f"Error deleting task: {e}")
 
@@ -113,7 +113,7 @@ class AnalyticsEngine:
         for t in tasks:
             categories[t.category] = categories.get(t.category, 0) + 1
             
-        print("\n--- 📊 Productivity Analytics ---")
+        print("\n--- Productivity Analytics ---")
         print(f"Total Tasks: {total}")
         print(f"Completion Rate: {int((completed/total)*100)}%")
         print(f"Pending Tasks: {pending}")
@@ -128,7 +128,7 @@ class CLIInterface:
 
     def run(self):
         while True:
-            print("\n=== 🎓 Student Task Manager ===")
+            print("\n=== Student Task Manager ===")
             print("1. Add Task")
             print("2. View Tasks")
             print("3. Mark Task Complete")
